@@ -1,0 +1,17 @@
+*.db
+*.log
+.idea/
+*.log
+*.iml
+*.ipr
+*.iws
+.classpath
+*.swp
+.settings
+.project
+.idea/*
+.settings/*
+target/*
+web-app/plugins/*
+target/
+
