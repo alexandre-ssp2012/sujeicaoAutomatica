@@ -5,6 +5,7 @@
 *.iml
 *.ipr
 *.iws
+*.pyc
 .classpath
 *.swp
 .settings
@@ -15,3 +16,7 @@ target/*
 web-app/plugins/*
 target/
 
+br/__pycache__/
+br/com/__pycache__/
+br/com/synchro/__pycache__/
+br/com/synchro/arvoreClassificatoria/__pycache__/
