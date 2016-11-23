@@ -6,6 +6,15 @@ class BSTNode(object):
         self.left = left
         self.right = right
 
+    def get(self, key):
+        """Adiciona elemento à subárvore"""
+        side = 'left' if key < self.key else 'right'
+        node = getattr(self, side)
+        if node is None:
+            setattr(self, side, BSTNode(key))
+        else:
+            node.add(key)
+
     def remove(self, key):
         if key < self.key:
             self.left = self.left.remove(key)

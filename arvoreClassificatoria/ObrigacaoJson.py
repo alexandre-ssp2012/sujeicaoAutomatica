@@ -179,8 +179,10 @@ class ObrigacaoJson:
   def printJson(self):
       data = self.data
       json_data = json.loads(data)
-      print(json_data.keys())
-      print(json_data["chave"])
-      print(json_data["nome"])
-      print(json_data["qualificacoes"])
+
+      listaJsonQualificacoes = json_data["qualificacoes"]
+
+      for indice, valor in enumerate(listaJsonQualificacoes):
+          print("aplicabilidade (",indice, valor["aplicabilidades"],")")
+
 

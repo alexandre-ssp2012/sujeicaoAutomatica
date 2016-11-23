@@ -1,4 +1,5 @@
-from br.com.synchro.arvoreClassificatoria import TreeNode
+from arvoreClassificatoria import TreeNode
+
 
 class BinarySearchTree:
 
