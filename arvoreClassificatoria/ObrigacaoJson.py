@@ -1,188 +1,134 @@
 import json
 
-
 class ObrigacaoJson:
 
-  def __init__(self):
-      self.data = '''
-                    {
-                        "chave" : "obrigacaoPrincipal_1393459742240",
-                        "nome" : "MG - PGTO ICMS ST",
-                        "qualificacoes" : [
+    dataSP = '''
+            {
+                "chave" : "obrigacaoAcessoria_1399301985605",
+                "nome" : "SP - ECF (Cupom Fiscal) - Emissor de Cupom Fiscal",
+                "criteriosVencimento" : [
+                     {
+                        "chave" : "criterio_1",
+                        "descricao" : "Fabricante, o importador, a empresa distribuidora ou revendedora de equipamento ECF (relação de todos os equipamentos ECF comercializados no mês anterior independete do local de destino do equipamento)",
+                        "aplicaveis" : [
                             {
-                                "chave" : "qualificacao_1",
-                                "descricao" : "Qualificação 1",
-                                "aplicabilidades" : [
-                                    {
-                                        "chave" : "aplicabilidade_1",
-                                        "descricao" : "Refinaria de petróleo ou as suas bases em relação as operações interestaduais com GLGN de origem nacional e GLGN originado de importação."
-                                    }
-                                ],
-                                "criteriosVencimento" : [
-                                    {
-                                        "chave" : "criterio_1",
-                                        "descricao" : "Repasse - GLGN de origem nacional e GLGN originado de importação"
-                                    }
-                                ]
-                            },
-                            {
-                                "chave" : "qualificacao_2",
-                                "descricao" : "Qualificação 2",
-                                "aplicabilidades" : [
-                                    {
-                                        "chave" : "aplicabilidade_2",
-                                        "descricao" : "Estabelecimento industrial (operações precedentes) situado no Estado da Bahia, Mato Grosso do Sul, Rio de Janeiro, Santa Catarina,  Paraná, Rio de Janeiro ou de São Paulo, na condição de sujeito passivo por substituição nas operações interestaduais com alumínio em formas brutas, alumínio não ligado, ligas de alumínio, inclusive a granalha de alumínio e quaisquer outras mercadorias classificadas na posição NBM/SH 76.01 nas operação promovida por estabelecimento remetente mineiro que atenda, cumulativamente, aos requisitos descritos nas alíneas 'a', 'b', 'c', 'd' e 'e' do inciso II do artigo 125 da Parte 1 do Anexo XV do Decreto nº 43.080/002."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_2_1",
-                                        "descricao" : "Estabelecimento industrial (operações precedentes) situado no Estado da Bahia, Paraná, Rio de Janeiro, São Paulo, Mato Grosso do Sul, Santa Catarina e o Distrito Federal, na condição de sujeito passivo por substituição nas operações interestaduais com alumínio em formas brutas, alumínio não ligado, ligas de alumínio, inclusive a granalha de alumínio e quaisquer outras mercadorias classificadas na posição NBM/SH 76.01, na hipótese de remessa de mercadoria para industrialização por conta e ordem do estabelecimento remetente mineiro."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_2_2",
-                                        "descricao" : "Estabelecimento industrial (operações precedentes) destinatário localizado nos estados da Bahia, Paraná, Rio de Janeiro, São Paulo, Mato Grosso do Sul, Santa Catarina e o Distrito Federal, na condição de sujeito passivo por substituição, pela retenção e recolhimento do ICMS devido pela entrada decorrente de operação interestadual com alumínio em formas brutas, alumínio não ligado, ligas de alumínio, inclusive a granalha de alumínio e quaisquer outras mercadorias classificadas na posição NBM/SH 7601."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_2_3",
-                                        "descricao" : "Estabelecimento industrial (operações precedentes) destinatário localizado nos estados da Bahia, Paraná, Rio de Janeiro, São Paulo, Mato Grosso do Sul, Santa Catarina e o Distrito Federal, na condição de sujeito passivo por substituição, pela retenção e recolhimento do ICMS devido pela entrada decorrente de operação interestadual com desperdícios e resíduos, inclusive a sucata, dos metais alumínio, cobre, níquel, chumbo, zinco e estanho e quaisquer outras mercadorias classificadas respectivamente nas subposições NBM/SH 7602.00, 7404.00, 7503.00, 7802.00, 7902.00, 8002.00."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_2_4",
-                                        "descricao" : "Estabelecimento industrial situado no Estado da Bahia, Paraná, Rio de Janeiro ou de São Paulo, na condição de sujeito passivo por substituição, na hipótese de operação de remessa para industrialização por conta e ordem do remetente nem nas operações de transferência de alumínio em formas brutas, alumínio não ligado, ligas de alumínio, inclusive a granalha de alumínio e quaisquer outras mercadorias classificadas na posição NBM/SH 76.01."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_2_5",
-                                        "descricao" : "Estabelecimento industrial situado no Estado da Bahia, Paraná, Rio de Janeiro ou de São Paulo, na condição de sujeito passivo por substituição, pela retenção e recolhimento do ICMS devido pela entrada decorrente de operação interestadual com alumínio em formas brutas, alumínio não ligado, ligas de alumínio, inclusive a granalha de alumínio e quaisquer outras mercadorias classificadas na posição NBM/SH 76.01."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_2_6",
-                                        "descricao" : "Estabelecimento industrial situado no Estado da Bahia, Paraná, Rio de Janeiro ou de São Paulo, na condição de sujeito passivo por substituição, pela retenção e recolhimento do ICMS devido pela entrada decorrente de operação interestadual com desperdícios e resíduos, inclusive a sucata, dos metais cobre, níquel, chumbo, zinco, estanho e alumínio, e quaisquer outras mercadorias classificadas respectivamente nas subposições NBM/SH 7404.00, 7503.00, 7802.00, 7902.00, 8002.00, 7602.00."
-                                    }
-                                ],
-                                "criteriosVencimento" : [
-                                    {
-                                        "chave" : "criterio_2",
-                                        "descricao" : "Operações precedentes - Desperdícios/Resíduos/Sucatas e Alumínio em forma bruta"
-                                    },
-                                    {
-                                        "chave" : "criterio_2_1",
-                                        "descricao" : "Desperdícios/Resíduos e Alumínio em formas brutas"
-                                    }
-                                ]
-                            },
-                            {
-                                "chave" : "qualificacao_3",
-                                "descricao" : "Qualificação 3",
-                                "aplicabilidades" : [
-                                    {
-                                        "chave" : "aplicabilidade_3",
-                                        "descricao" : "CONAB, nas operações vinculadas ao Programa de Aquisição de Alimentos da Agricultura Familiar (PAA), relativamente ao imposto devido a título de substituição tributária, nas saídas internas promovidas por produtor rural."
-                                    }
-                                ],
-                                "criteriosVencimento" : [
-                                    {
-                                        "chave" : "criterio_3",
-                                        "descricao" : "CONAB"
-                                    }
-                                ]
-                            },
-                            {
-                                "chave" : "qualificacao_4",
-                                "descricao" : "Qualificação 4",
-                                "aplicabilidades" : [
-                                    {
-                                        "chave" : "aplicabilidade_4",
-                                        "descricao" : "Distribuidor hospitalar situado no Estado de Minas Gerais, na condição de sujeito passivo por substituição, pela retenção e recolhimento do ICMS devido nas operações subsequentes com as mercadorias submetidas ao regime de substituição tributária de que trata o capítulo 13 da Parte 2 do Anexo XV do RICMS (Medicamentos de uso humano e outros produtos farmacêuticos para uso humano ou veterinário)."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_4_1",
-                                        "descricao" : "Distribuidor hospitalar situado em Minas Gerais nas operações subsequentes com as mercadorias de que trata o item 15 da Parte 2 do Anexo XV do RICMS."
-                                    }
-                                ],
-                                "criteriosVencimento" : [
-                                    {
-                                        "chave" : "criterio_4",
-                                        "descricao" : "Operações subsequentes (saídas)"
-                                    }
-                                ]
-                            },
-                            {
-                                "chave" : "qualificacao_5",
-                                "descricao" : "Qualificação 5",
-                                "aplicabilidades" : [
-                                    {
-                                        "chave" : "aplicabilidade_5",
-                                        "descricao" : "Estabelecimento comercializador de partes, componentes e acessórios, usados, de que trata o Capítulo 1 da Parte 2 do Anexo XV do RICMS, exceto em se tratando de recebimento em operação interestadual."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_5_1",
-                                        "descricao" : "Estabelecimento comercializador de terminais portáteis de telefonia celular usados."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_5_2",
-                                        "descricao" : "Estabelecimento comercializador de partes, componentes e acessórios de produtos autopropulsados, usados, de que trata o Capítulo 1 da Parte 2 do Anexo XV do RICMS, exceto em se tratando de recebimento em operação interestadual."
-                                    }
-                                ],
-                                "criteriosVencimento" : [
-                                    {
-                                        "chave" : "criterio_5",
-                                        "descricao" : "Autopeças USADOS (exceto em se tratando de recebimento em operação interestadual)"
-                                    }
-                                ]
-                            },
-                            {
-                                "chave" : "qualificacao_6",
-                                "descricao" : "Qualificação 6",
-                                "aplicabilidades" : [
-                                    {
-                                        "chave" : "aplicabilidade_6",
-                                        "descricao" : "Refinaria de petróleo ou as suas bases, em relação às operações com Combustíveis Derivados de Petróleo."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_6_1",
-                                        "descricao" : "Refinaria ou suas bases, se constatada  a inexistência ou a insuficiência do valor recolhido, pela Diretoria de Gestão de Projetos da Superintendência de Fiscalização, em relação às operações cujo imposto relativo à gasolina “A” ou ao óleo diesel devesse ser retido por outros contribuintes."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_6_2",
-                                        "descricao" : "Refinaria ou suas bases, se constatada pela Diretoria de Gestão de Projetos da Superintendência de Fiscalização a inexistência ou a insuficiência do valor do imposto recolhido."
-                                    },
-                                    {
-                                        "chave" : "aplicabilidade_6_3",
-                                        "descricao" : "Refinaria de petróleo ou suas bases, caso  não haja a manifestação prevista no inciso III do artigo 86 do Anexo XV do RICMS, em relação ao repasse do imposto provisionado, em favor da unidade federada para qual foi efetuado o provisionamento."
-                                    }
-                                ],
-                                "criteriosVencimento" : [
-                                    {
-                                        "chave" : "criterio_6",
-                                        "descricao" : "(Combustíveis derivados de petróleo) Provisão do ICMS retido anteriormente por outros contribuintes (provisão do valor do imposto devido às unidades federadas de destino das mercadorias, limitado ao valor efetivamente recolhido à unidade federada de origem)"
-                                    },
-                                    {
-                                        "chave" : "criterio_6_1",
-                                        "descricao" : "(Combustíveis derivados de petróleo) Repasse do ICMS retido anteriormente por refinaria de petróleo ou por suas bases (repasse do valor do imposto devido às unidades federadas de destino das mercadorias, limitado ao valor do imposto efetivamente retido e do relativo à operação própria, quando este Estado for destinatário da mercadoria)"
-                                    },
-                                    {
-                                        "chave" : "criterio_6_2",
-                                        "descricao" : "(Álcool Combustível e com Biodiesel B100) Provisão do ICMS anteriormente retido por Outros Contribuintes (em relação às operações cujo imposto relativo à gasolina “A” ou ao óleo diesel tenha sido anteriormente retido por outros contribuintes, a refinaria de petróleo ou suas bases deve efetuar a provisão do valor do imposto devido à unidade da Federação de origem do álcool etílico anidro combustível ou do biodiesel)"
-                                    },
-                                    {
-                                        "chave" : "criterio_6_3",
-                                        "descricao" : "(Álcool Combustível e com Biodiesel B100) Repasse do ICMS retido anteriormente pela Refinaria de Petróleo ou suas Bases (em relação às operações cujo imposto relativo à gasolina “A” ou ao óleo diesel tenha sido anteriormente retido pela própria refinaria de petróleo ou por suas bases, a refinaria de petróleo ou suas bases deve efetuar o  repasse do valor do imposto devido à unidade da Federação de origem do álcool etílico anidro combustível ou do biodiesel, quando o produto for originário deste Estado)"
-                                    },
-                                    {
-                                        "chave" : "criterio_6_4",
-                                        "descricao" : "(Álcool Combustível e com Biodiesel B100) Provisionamento do ICMS devido após comunicação da Sefaz pela não aceitação da dedução informada (valor provisionado ou a parcela referente ao valor contestado)"
-                                    }
-                                ]
+                            "chave" : "aplicabilidade_1_1",
+                            "descricao" : "Obriga - Fabricante, importador, empresa distribuidora ou revendedora de equipamento ECF"
                             }
                         ]
-                    }'''
+                     },
+                     {
+                        "chave" : "criterio_2",
+                        "descricao" : "Usuário de ECF (relação dos equipamentos ECF movimentados)",
+                        "aplicaveis" : [
+                            {
+                                "chave" : "aplicabilidade_2_1",
+                                "descricao" : "Obriga - Estabelecimento que efetue operação com mercadoria ou prestação de serviços em que o destinatário ou o tomador do serviço seja pessoa física ou jurídica não-contribuinte do imposto."
+                            },
+                            {
+                                "chave" : "aplicabilidade_2_2",
+                                "descricao" : "Obriga - Estabelecimento com expectativa de receita bruta anual superior a R$ 120.000,00 (cento e vinte mil reais) deverá adotar Equipamento Emissor de Cupom Fiscal - ECF com memória de Fita-Detalhe (MFD)."
+                            },
+                            {
+                                "chave" : "aplicabilidade_2_3",
+                                "descricao" : "Obriga - Estabelecimento usuário de ECF que promover a saída interna ou interestadual de ECF novo ou usado."
+                            }
+                        ]
+                     },
+                     {
+                        "chave" : "criterio_3",
+                        "descricao" : "Usuário de ECF (conteúdo da leitura da Memória Fiscal)",
+                        "aplicaveis" : [
+                            {
+                                "chave" : "aplicabilidade_3_1",
+                                "descricao" : "Obriga - Estabelecimento que efetue operação com mercadoria ou prestação de serviços em que o destinatário ou o tomador do serviço seja pessoa física ou jurídica não-contribuinte do imposto."
+                            },
+                            {
+                                "chave" : "aplicabilidade_3_2",
+                                "descricao" : "Obriga - Estabelecimento com expectativa de receita bruta anual superior a R$ 120.000,00 (cento e vinte mil reais) deverá adotar Equipamento Emissor de Cupom Fiscal - ECF com memória de Fita-Detalhe (MFD)."
+                            },
+                            {
+                                "chave" : "aplicabilidade_3_3",
+                                "descricao" : "Obriga - Estabelecimento usuário de ECF que promover a saída interna ou interestadual de ECF novo ou usado."
+                            }
+                        ]
+                     }
+                ]
+            }
+           '''
 
-  def printJson(self):
-      data = self.data
-      json_data = json.loads(data)
+    listaCriterioKey_1 = ["fabricante", "importador", "distribuidora", "revendedora", "equipamento ECF"]
+    dictCriterioValue_1 = {"chaveObrigacao" : "obrigacaoAcessoria_1399301985605", "chaveCriterio" : "criterio_1", "descricao" : "Fabricante, o importador, a empresa distribuidora ou revendedora de equipamento ECF (relação de todos os equipamentos ECF comercializados no mês anterior independete do local de destino do equipamento)"}
+    listaAplicabilidade_1 = ["fabricante", "importador", "distribuidora", "revendedora", "equipamento ECF"]
+    dictAplicabilidade_1 = {"chaveObrigacao" : "obrigacaoAcessoria_1399301985605", "chaveAplicabilidade" : "aplicabilidade_1", "descricao": "Obriga - Fabricante, importador, empresa distribuidora ou revendedora de equipamento ECF"}
 
-      listaJsonQualificacoes = json_data["qualificacoes"]
+    listaCriterioKey_2 = ["ECF", "relação dos equipamentos ECF movimentados"]
+    dictCriterioValue_2 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605",
+                           "chaveCriterio": "criterio_2",
+                           "descricao" : "Usuário de ECF (relação dos equipamentos ECF movimentados)"}
+    listaAplicabilidade_2_1 = ["mercadoria", "prestação de serviços", "pessoa física", "pessoa jurídica", "não-contribuinte"]
+    dictAplicabilidade_2_1 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605",
+                            "chaveAplicabilidade": "aplicabilidade_2_1",
+                            "descricao": "Obriga - Estabelecimento que efetue operação com mercadoria ou prestação de serviços em que o destinatário ou o tomador do serviço seja pessoa física ou jurídica não-contribuinte do imposto."}
+    listaAplicabilidade_2_2 = ["receita > R$ 120.000,00"]
+    dictAplicabilidade_2_2 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605",
+                              "chaveAplicabilidade": "aplicabilidade_2_2",
+                              "descricao": "Obriga - Estabelecimento com expectativa de receita bruta anual superior a R$ 120.000,00 (cento e vinte mil reais) deverá adotar Equipamento Emissor de Cupom Fiscal - ECF com memória de Fita-Detalhe (MFD)."}
+    listaAplicabilidade_2_3 = ["ECF", "saída interna", "saída interestadual", "novo", "usado"]
+    dictAplicabilidade_2_3 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605",
+                              "chaveAplicabilidade": "aplicabilidade_2_3",
+                              "descricao": "Obriga - Estabelecimento usuário de ECF que promover a saída interna ou interestadual de ECF novo ou usado."}
 
-      for indice, valor in enumerate(listaJsonQualificacoes):
-          print("aplicabilidade (",indice, valor["aplicabilidades"],")")
+    listaCriterioKey_3 = ["ECF", "conteúdo da leitura da Memória Fiscal"]
+    dictCriterioValue_3 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605", "chaveCriterio": "criterio_3", "descricao" : "Usuário de ECF (conteúdo da leitura da Memória Fiscal)"}
+    listaAplicabilidade_3_1 = ["mercadoria", "prestação de serviços", "pessoa física", "pessoa jurídica", "não-contribuinte"]
+    dictAplicabilidade_3_1 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605",
+                              "chaveAplicabilidade": "aplicabilidade_3_1",
+                              "descricao": "Obriga - Estabelecimento que efetue operação com mercadoria ou prestação de serviços em que o destinatário ou o tomador do serviço seja pessoa física ou jurídica não-contribuinte do imposto."}
+    listaAplicabilidade_3_2 = ["receita > R$ 120.000,00"]
+    dictAplicabilidade_3_2 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605",
+                              "chaveAplicabilidade": "aplicabilidade_3_2",
+                              "descricao": "Obriga - Estabelecimento com expectativa de receita bruta anual superior a R$ 120.000,00 (cento e vinte mil reais) deverá adotar Equipamento Emissor de Cupom Fiscal - ECF com memória de Fita-Detalhe (MFD)."}
+    listaAplicabilidade_3_3 = ["ECF", "saída interna", "saída interestadual", "novo", "usado"]
+    dictAplicabilidade_3_3 = {"chaveObrigacao": "obrigacaoAcessoria_1399301985605",
+                              "chaveAplicabilidade": "aplicabilidade_3_3",
+                              "descricao": "Obriga - Estabelecimento usuário de ECF que promover a saída interna ou interestadual de ECF novo ou usado."}
+
+    def printJson(self):
+        #data = self.data
+        json_data = json.loads(self.dataSP)
+        print(json_data.keys())
+
+        criterios = json_data["criteriosVencimento"]
+        print(criterios)
+
+          # data_teste = '''
+          #     {
+          #         "primeiroNome": "Joao",
+          #         "ultimoNome": "Smith",
+          #         "idade": 25,
+          #         "endereco": {
+          #             "rua": "Rua Assis Brasil, 1000",
+          #             "cidade": "Blumenau",
+          #             "estado": "SC"
+          #         },
+          #         "telefones": [
+          #             "5555-5555",
+          #             "9999-9999"
+          #         ],
+          #         "emails": [
+          #             {
+          #                 "tipo": "pessoal",
+          #                 "endereco": "joao@joao.com"
+          #             },
+          #             {
+          #                 "tipo": "profissional",
+          #                 "endereco": "joao.smith@algumaempresa.com"
+          #             }
+          #         ]
+          #     }
+          # '''
+
+
 
 

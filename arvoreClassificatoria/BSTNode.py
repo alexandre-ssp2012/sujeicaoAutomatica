@@ -7,6 +7,14 @@ class BSTNode(object):
         self.right = right
 
     def get(self, key):
+        """Retorna uma referência ao nó de chave key"""
+        if self.key == key:
+            return self
+        node = self.left if key < self.key else self.right
+        if node is not None:
+            return node.get(key)
+
+    def add(self, key):
         """Adiciona elemento à subárvore"""
         side = 'left' if key < self.key else 'right'
         node = getattr(self, side)
@@ -47,3 +55,20 @@ class BSTNode(object):
             return self.right
         self.left = self.left._removeMin()
         return self
+
+
+class BSTNodeObrigacao(object):
+
+    def __init__(self, key, value=None, left=None, right=None):
+        self.key = key
+        self.value = value
+        self.left = left
+        self.right = right
+
+    def get(self, key):
+        """Retorna uma referência ao nó de chave key"""
+        if key in self.key :
+            return self
+        node = self.left
+        if node is not None:
+            return node.get(key)
