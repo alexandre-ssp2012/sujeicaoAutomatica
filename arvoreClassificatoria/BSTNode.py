@@ -59,16 +59,30 @@ class BSTNode(object):
 
 class BSTNodeObrigacao(object):
 
-    def __init__(self, key, value=None, left=None, right=None):
+    def __init__(self, key, listOperators=None, value=None, left=None, right=None):
         self.key = key
+        self.listOperators = listOperators
         self.value = value
         self.left = left
         self.right = right
+        self.treeAccessed = False #no caso desta árvore já ter sido percorrida e ter atendido a pesquisa e setado com True
 
-    def get(self, key):
+    def getByKey(self, key):
         """Retorna uma referência ao nó de chave key"""
-        if key in self.key :
+        if key == self.key:
             return self
         node = self.left
         if node is not None:
-            return node.get(key)
+            return node.getByKey(key)
+
+    def getByOperators(self, operator):
+        if operator in self.listOperators :
+            if self.treeAccessed: # já foi usado, percorrido este nó da arvore, passa para o nó a esquerda
+                node = self.left
+                return node.getByOperators(operator)
+            else:
+                self.treeAccessed = True
+                return self
+        node = self.left
+        if node is not None:
+            return node.getByOperators(operator)
