@@ -13,6 +13,12 @@ class MainObrigacaoJson:
         print("total de obrigações acessórias: ", cursorAll.count())
         print("obrigação acessória obrigacaoAcessoria_1399301985605: ", cursor)
 
+        cursorLiberadasAll = obrigacaoAcessoriaRepository.findObrigacoesAcessorias(True)
+        cursorLiberadas = obrigacaoAcessoriaRepository.findByChaveObrigacoesAcessorias("obrigacaoAcessoria_1393460088663", True)
+
+        print("total de obrigações acessórias liberadas: ", cursorLiberadasAll.count())
+        print("obrigação acessória obrigacaoAcessoria_1393460088663: ", cursorLiberadas)
+
         # obrigacaoJson = ObrigacaoJson()
         #
         # jsonDataSP = obrigacaoJson.jsonDataSP()

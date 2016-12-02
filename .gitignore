@@ -15,6 +15,7 @@
 target/*
 web-app/plugins/*
 target/
+dev/*
 
 br/__pycache__/
 br/com/__pycache__/

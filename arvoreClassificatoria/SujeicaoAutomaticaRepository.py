@@ -5,7 +5,7 @@ class ObrigacoesAcessoriasRepository:
         self.connect = ConnectMongodb()
 
     def getDbObrigacaoAcessoria(self, isLiberadas):
-        db = self.connect.getDbObrigacoesProducao() if isLiberadas else self.connect.getDbObrigacoesProducao()
+        db = self.connect.getDbObrigacoesProducaoLiberadas() if isLiberadas else self.connect.getDbObrigacoesProducao()
         return db.obrigacaoAcessoria
 
     def findObrigacoesAcessorias(self, isLiberadas):
